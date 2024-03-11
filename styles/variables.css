@@ -5,4 +5,6 @@
   --font-accent: 'PressStart2P-Regular', monospace;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
+  --background-color: #fff;
+  --accent-color: #000;
 }
