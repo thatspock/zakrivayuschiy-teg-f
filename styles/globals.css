@@ -9,7 +9,7 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
 }
 
 h1,
@@ -21,7 +21,8 @@ h6,
 p,
 ul,
 ol,
-li {
+li,
+button {
   margin: 0;
   padding: 0;
 }
