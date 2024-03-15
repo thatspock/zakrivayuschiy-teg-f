@@ -165,4 +165,8 @@
   .card__content {
     padding-block-end: 22px;
   }
+
+  .card__image {
+    object-fit: contain;
+  }
 }
