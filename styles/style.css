@@ -149,6 +149,22 @@
   cursor: pointer;
 }
 
+.card__image-wrapper {
+  position: relative;
+}
+
+.card__label {
+  position: absolute;
+  inset-block-start: 25px;
+  inset-inline-end: 25px;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  text-transform: lowercase;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow: 1px -1px 0 white, 1px 1px 0 white, -1px 1px 0 white, -1px -1px 0 white;
+}
+
 @media (width <= 375px) {
   .page {
     max-inline-size: 100vw;
@@ -170,3 +186,10 @@
     object-fit: contain;
   }
 }
+
+@supports(-webkit-text-stroke: 1px var(--background-color)) {
+  .card__label {
+      -webkit-text-stroke: 1px var(--background-color);
+      text-shadow: none;
+  }
+} 
