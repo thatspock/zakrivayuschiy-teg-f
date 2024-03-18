@@ -159,32 +159,72 @@
 }
 
 .button {
+  position: relative;
+  display: grid;
+  align-items: center;
   border: 2px solid currentColor;
+  box-shadow: none;
+  outline: none;
+  overflow: hidden;
+  background-color: var(--background-color);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer; 
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent-color);
+  transition: transform 0.5s ease-in-out; 
+  transform: scaleX(0);
+  transform-origin: left center; 
+}
+
+.card__like-button:hover::before, .save-button:hover::before {
+  transform: scaleX(1);
+}
+
+.card__like-button:focus-visible, .save-button:focus-visible {
+  box-shadow: 2px 2px currentColor;
+  transition: box-shadow 0.3s ease;
+}
+
+.card__like-button:hover, .save-button:hover {
+  scale: 1;
+}
+
+.button__text {
+  position: relative;
+  color: var(--text-color);
   font-family: var(--font-accent);
   font-weight: 400;
   font-size: 14px;
   line-height: 0.9;
-  background-color: var(--background-color);
-  cursor: pointer;
+  mix-blend-mode: difference;
 }
 
 .card__like-button {
-  padding: 11px 35px;
+  padding-block: 11px;
+  min-inline-size: 130px;
 }
 
 .save-button {
-  display: grid;
-  place-items: center;
-  place-content: center;
   gap: 8px;
   margin: 0 auto;
   padding: 15px 20px;
   grid-template: auto / repeat(2, max-content);
 }
 
+.card__icon-button {
+  border: none;
+}
+
 .floppy-icon {
+  color: var(--text-color);
   inline-size: 21px;
   block-size: 21px;
+  mix-blend-mode: difference;
 }
 
 .like-icon {
