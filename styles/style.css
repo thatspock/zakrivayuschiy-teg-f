@@ -237,7 +237,7 @@
 
 .like-icon {
   cursor: pointer;
-  inline-size: 27px;
+  inline-size: 36px;
 }
 
 .card__image-wrapper {
@@ -258,6 +258,10 @@
 
 .card__sprint:nth-child(-n+3) .card__label {
   text-transform: uppercase;
+}
+
+.sparks {
+  opacity: 0;
 }
 
 @supports(-webkit-text-stroke: 1px var(--background-color)) {
