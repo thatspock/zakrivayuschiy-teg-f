@@ -137,8 +137,9 @@
 
 .card__image {
   border-block: 2px solid currentColor;
-  object-fit: none;
+  object-fit: cover;
   max-inline-size: 100%;
+  min-block-size: 700px;
 }
 
 .card__content {
@@ -155,7 +156,7 @@
   grid-template-columns: repeat(2, max-content);
   justify-content: end;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
   padding: 0 25px 25px;
 }
 
@@ -213,6 +214,16 @@
   mix-blend-mode: difference;
 }
 
+.floppy-icon {
+  inline-size: 21px;
+  block-size: 21px;
+}
+
+.dialog__content .floppy-icon {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
 .card__like-button {
   padding-block: 11px;
   min-inline-size: 130px;
@@ -221,7 +232,6 @@
 .card__icon-button {
   border: none;
   outline: 2px solid transparent;
-  outline-offset: 0.5px;
   transition: outline-color 0.3s ease;
 }
 
@@ -244,15 +254,10 @@
   opacity: 0.5;
   font-family: var(--font-accent);
   font-size: 14px;
-  text-transform: lowercase;
   text-shadow: 1px -1px 0 var(--background-color), 1px 1px 0 var(--background-color), -1px 1px 0 var(--background-color), -1px -1px 0 var(--background-color);
   inset-block-start: 25px;
   inset-inline-end: 25px;
   mix-blend-mode: hard-light;
-}
-
-.card__sprint:nth-child(-n+3) .card__label {
-  text-transform: uppercase;
 }
 
 .heart {
@@ -262,7 +267,7 @@
 .like-icon {
   outline: none;
   cursor: pointer;
-  min-inline-size: 36px;
+  min-inline-size: 39px;
 }
 
 .like-icon .core {
@@ -404,23 +409,39 @@ dialog:not([open]) {
   }
 
   .save-button {
+    justify-items: center;
     margin-block-end: 100px;
     grid-template: repeat(2, max-content) / auto;
   }
 
+  .card__image {
+    min-block-size: 375px;
+  }
+
   .card__title {
-    padding: 3.5px 10px 5.5px 10px;
+    padding: 3px 10px 5px 10px;
   }
 
   .card__content {
-    padding-block-end: 23.5px;
-  }
-
-  .card__image {
-    object-fit: contain;
+    padding-block-end: 24px;
   }
 
   .card__label {
     inset-inline-end: 13px;
+  }
+
+  .dialog {
+    padding: 30px 40px;
+    min-inline-size: 341px;
+    min-block-size: 195px;
+  }
+
+  .dialog__text {
+    max-inline-size: 198px;
+  }
+
+  .floppy-icon {
+    inline-size: 28px;
+    block-size: 28px;
   }
 }
