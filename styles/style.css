@@ -166,10 +166,18 @@
   border: 2px solid currentColor;
   box-shadow: none;
   outline: none;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: var(--background-color);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
+}
+
+.save-button {
+  gap: 8px;
+  margin: 0 auto;
+  margin-block-end: 103px;
+  padding: 15px 20px;
+  grid-template: auto / repeat(2, max-content);
 }
 
 .button::before {
@@ -210,13 +218,6 @@
   min-inline-size: 130px;
 }
 
-.save-button {
-  gap: 8px;
-  margin: 0 auto;
-  padding: 15px 20px;
-  grid-template: auto / repeat(2, max-content);
-}
-
 .card__icon-button {
   border: none;
   outline: 2px solid transparent;
@@ -231,8 +232,6 @@
 
 .floppy-icon {
   color: var(--text-color);
-  inline-size: 21px;
-  block-size: 21px;
   mix-blend-mode: difference;
 }
 
@@ -345,6 +344,53 @@
   opacity: 0;
 }
 
+.dialog {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  border: 2px solid var(--accent-color);
+  padding: 29px 28.5px;
+  color: var(--accent-color);
+  background-color: var(--background-color);
+  transition: opacity 0.3s ease-in-out;
+  min-inline-size: 357px;
+  min-block-size: 193px;
+}
+
+dialog:not([open]) {
+  opacity: 0;
+  pointer-events: none;
+} 
+
+.dialog::backdrop {
+  opacity: 0.75;
+  background-color: #000;
+}
+
+.dialog__content {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  align-items: center;
+  gap: 20px;
+  padding-block-end: 30px;
+}
+
+.dialog__text {
+  color: var(--accent-color);
+  font-family: var(--font-accent);
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  max-inline-size: 234px;
+}
+
+.dialog-button {
+  padding-block: 10.5px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  inline-size: 100%;
+}
+
 @supports(-webkit-text-stroke: 1px var(--background-color)) {
   .card__label {
       text-shadow: none;
@@ -358,6 +404,7 @@
   }
 
   .save-button {
+    margin-block-end: 100px;
     grid-template: repeat(2, max-content) / auto;
   }
 
