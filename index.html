@@ -330,13 +330,15 @@
             Вставьте дискету, чтобы продолжить
           </p>
         </div>
-        <button 
-          class="button dialog-button"
-          type="button"
-          onclick="window['dialog-id'].close();"
-        >
+        <form method="dialog">
+          <button 
+            class="button dialog-button"
+            type="button"
+            onclick="window['dialog-id'].close();"
+          >
           <span class="button__text">Ок</span>
         </button>
+        </form>
     </dialog>
     </main>
     <script src="./scripts/like.js"></script>
