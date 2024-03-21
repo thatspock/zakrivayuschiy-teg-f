@@ -252,8 +252,10 @@
 }
 
 .floppy-icon {
+  color: var(--text-color);
   inline-size: 21px;
   block-size: 21px;
+  mix-blend-mode: difference;
 }
 
 .dialog__content .floppy-icon {
@@ -275,11 +277,6 @@
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color);
   transition: outline-color 0.3s ease;
-}
-
-.floppy-icon {
-  color: var(--text-color);
-  mix-blend-mode: difference;
 }
 
 .card__label {
