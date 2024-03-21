@@ -358,8 +358,8 @@
   color: var(--accent-color);
   background-color: var(--background-color);
   transition: opacity 0.3s ease-in-out;
-  min-inline-size: 357px;
-  min-block-size: 193px;
+  max-inline-size: 357px;
+  max-block-size: 193px;
 }
 
 dialog:not([open]) {
@@ -432,8 +432,8 @@ dialog:not([open]) {
 
   .dialog {
     padding: 30px 40px;
-    min-inline-size: 341px;
-    min-block-size: 195px;
+    max-inline-size: 341px;
+    max-block-size: 195px;
   }
 
   .dialog__text {
