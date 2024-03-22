@@ -389,7 +389,6 @@ dialog:not([open]) {
   .dialog {
     padding: 30px 40px;
     max-inline-size: 341px;
-    max-block-size: 195px;
   }
 
   .dialog__text {
