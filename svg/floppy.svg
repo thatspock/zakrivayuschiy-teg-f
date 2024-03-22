@@ -2,7 +2,6 @@
   <symbol 
     xmlns="http://www.w3.org/2000/svg" 
     id="floppy"
-    stroke="currentColor"
     fill="currentColor"
     viewBox="0 0 21 21"
   >
@@ -12,3 +11,4 @@
     <path d="M21 9.693h-1.615V8.078H21zM21 8.077h-1.615V6.462H21zM21 6.462h-1.615V4.847H21zM21 4.846h-1.615V3.231H21z"/>
   </symbol>
 </svg>
+

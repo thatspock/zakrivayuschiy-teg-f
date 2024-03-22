@@ -24,7 +24,7 @@
   min-inline-size: 320px;
   max-inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   min-block-size: 100dvb;
-  font-variation-settings: 'wgth' var(--font-weight-normal);
+  font-variation-settings: 'wght' var(--font-weight-normal);
 }
 
 .header {
@@ -71,7 +71,6 @@
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: opacity 0.3s;
 }
 
 .theme-menu__button::after {
@@ -79,6 +78,8 @@
   position: absolute;
   display: block;
   height: 2px;
+  margin-inline-start: 0;
+  margin-block-start: 0;
   background-color: currentColor;
   transition: inline-size 0.3s ease, background-color 0.3s ease;
   inline-size: 0%;
@@ -95,17 +96,8 @@
   position: absolute;
   visibility: hidden;
   margin-inline-start: -20px;
+  margin-block-start: 0;
   animation: arrow 0.5s infinite ease-in-out alternate;
-}
-
-@keyframes arrow {
-  from {
-    margin-inline-start: -20;
-  }
-
-  to {
-    margin-inline-start: -24px;
-  }
 }
 
 .theme-menu__button:focus {
@@ -120,6 +112,7 @@
   font-size: 14px;
   text-transform: uppercase;
   background: none;
+  transition: opacity 0.3s;
   cursor: pointer;
 }
 
@@ -131,7 +124,12 @@
 
 .card__title {
   padding: 4.5px 24px 4.5px 10px;
-  font-weight: var(--font-weight-bold);
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-variation-settings: 'wght' var(--font-weight-bold);
+}
+
+.card__content-text {
   font-size: 18px;
 }
 
@@ -144,6 +142,7 @@
 
 .card__image {
   object-fit: cover;
+  object-position: center;
   max-inline-size: 100%;
   min-block-size: 696px;
 }
@@ -228,16 +227,15 @@
   transform-origin: left center;
 }
 
-.card__like-button:hover::before, .save-button:hover::before {
+.interactive-button:hover::before {
   transform: scaleX(1);
 }
 
-.card__like-button:focus-visible, .save-button:focus-visible {
+.interactive-button:focus-visible {
   box-shadow: 2px 2px currentColor;
-  transition: box-shadow 0.3s ease;
 }
 
-.card__like-button:hover, .save-button:hover {
+.interactive-button:hover {
   scale: 1;
 }
 
@@ -276,7 +274,6 @@
 
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color);
-  transition: outline-color 0.3s ease;
 }
 
 .card__label {
@@ -293,6 +290,7 @@
 @supports(-webkit-text-stroke: 1px var(--background-color)) {
   .card__label {
       text-shadow: none;
+      text-stroke: 1px var(--background-color);
       -webkit-text-stroke: 1px var(--background-color);
   }
 } 
@@ -321,7 +319,6 @@
   background-color: var(--background-color);
   transition: opacity 0.3s ease-in-out;
   max-inline-size: 357px;
-  max-block-size: 193px;
 }
 
 dialog:not([open]) {
